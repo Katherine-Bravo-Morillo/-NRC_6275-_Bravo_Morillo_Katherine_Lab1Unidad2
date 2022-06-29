@@ -1,15 +1,18 @@
+/*Estilo Css que permite agregar color de fondo y color de borde al lienzo del juego
+*/
 canvas {
     border:2px solid rgb(239, 238, 238);
     background-color: #ebbbe2;
-    
-   
 }
-
+/*Estilo Css - selector de etiqueta que permite cambiar el fondo de pantalla ademas de centrar el jueg
+*/
 body {
     background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUAxh_Rt10C48Faf9Z8IY1hmZcXg5Zb2fLUgOGhNupPRvwBMwhNpVNmF84ZSEECIN_JJo&usqp=CAU) no-repeat center center fixed;
     background-size: cover;
    text-align:center;
 }
+/*Selector de clase que permite agregar estilo a la etiqueta H1
+*/
 .estilo{
     color: rgb(236, 230, 230); text-shadow: black 0.1em 0.1em 0.2em;
     font-family: Georgia, 'Times New Roman', Times, serif;
