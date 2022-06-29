@@ -16,12 +16,10 @@ app._static_folder = os.path.abspath("templates/static/")
 #Ruta de pagina index
 #---------------------------------------
 
-
 @app.route('/', methods=["GET"])
 #funcion que hace el llamado al archivo index
 def index():
     return render_template("/layouts/index.html")
-
 
 #---------------------------------------
 #iniciamos la aplicacion
