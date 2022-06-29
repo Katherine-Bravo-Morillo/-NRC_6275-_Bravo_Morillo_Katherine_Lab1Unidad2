@@ -13,9 +13,9 @@ var jumpSpeed = 0;
 
 var block;
 
-// Create a score of 0 to start with
+// Se crea un espacio de inicio
 var score = 0;
-// Create a variable to hold our scoreLabel
+// Crea una variable para el instanciar 
 var scoreLabel;
 
 function startGame() {
@@ -25,7 +25,7 @@ function startGame() {
     // Assign your scoreLabel variable a value from scoreLabel()
     scoreLabel = new createScoreLabel(10, 30);
 }
-
+ // Esta funcion permite definir dimensiones del juego
 var gameCanvas = {
     canvas: document.createElement("canvas"),
     start: function() {
@@ -35,7 +35,7 @@ var gameCanvas = {
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
     }
 }
-
+ // Esta funcion permite definir dimensiones del juego
 function createPlayer(width, height, x) {
     this.width = width;
     this.height = height;
@@ -54,6 +54,7 @@ function createPlayer(width, height, x) {
             this.stopPlayer();
         }
     }
+    /*Funcion donde se establce la terminacion del juego cuando se cumpla cierta instruccion   */
     this.stopPlayer = function() {
         var ground = canvasHeight - this.height;
         if (this.y > ground) {
@@ -85,6 +86,8 @@ function createBlock() {
         this.x -= speed;
         this.returnToAttackPosition();
     }
+    
+ // Esta funcion permite crear una posición de retorno a ataque que mueva el bloque hacia atrás
     this.returnToAttackPosition = function() {
         if (this.x < 0) {
             width = randomNumber(10, 50);
@@ -97,7 +100,7 @@ function createBlock() {
         }
     }
 }
-
+/*Funcion que permire detectar si se produce coliciones dentro del juego */
 function detectCollision() {
     var playerLeft = player.x
     var playerRight = player.x + player.width;
@@ -126,6 +129,8 @@ function createScoreLabel(x, y) {
         ctx.fillText(this.text, this.x, this.y);
     }
 }
+/*
+Esta funcion permite verificar si hay una colisión cada vez que actualice el lienzo */
 
 function updateCanvas() {
     detectCollision();
